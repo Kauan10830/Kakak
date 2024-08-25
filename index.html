@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta</title>
+    <style>
+        body {
+            background-color: pink;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 20%;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .hidden {
+            display: none;
+        }
+        #sim {
+            margin-right: 20px; /* Espaço entre os botões */
+        }
+        #nao {
+            cursor: pointer;
+            margin-left: 20px; /* Espaço entre os botões */
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        .coracao {
+            position: absolute;
+            font-size: 24px;
+            color: red;
+            animation: pulsar 1.5s infinite;
+        }
+        @keyframes pulsar {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        #coracao1 { top: 10%; left: 5%; }
+        #coracao2 { top: 15%; right: 10%; }
+        #coracao3 { top: 25%; left: 20%; }
+        #coracao4 { top: 35%; right: 20%; }
+        #coracao5 { top: 45%; left: 30%; }
+        #coracao6 { top: 55%; right: 30%; }
+        #coracao7 { top: 65%; left: 40%; }
+        #coracao8 { top: 75%; right: 40%; }
+        #coracao9 { top: 85%; left: 50%; }
+        #coracao10 { top: 10%; right: 50%; }
+        #coracao11 { top: 20%; left: 60%; }
+        #coracao12 { top: 30%; right: 60%; }
+        #coracao13 { top: 40%; left: 70%; }
+        #coracao14 { top: 50%; right: 70%; }
+        #coracao15 { top: 60%; left: 80%; }
+        #recado {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você aceita sair comigo?</h1>
+    <button id="sim" onclick="alert('Obrigado por aceitar!')">Sim</button>
+    <button id="nao" onclick="moverNao()">Não</button>
+
+    <div class="coracao" id="coracao1">❤️</div>
+    <div class="coracao" id="coracao2">❤️</div>
+    <div class="coracao" id="coracao3">❤️</div>
+    <div class="coracao" id="coracao4">❤️</div>
+    <div class="coracao" id="coracao5">❤️</div>
+    <div class="coracao" id="coracao6">❤️</div>
+    <div class="coracao" id="coracao7">❤️</div>
+    <div class="coracao" id="coracao8">❤️</div>
+    <div class="coracao" id="coracao9">❤️</div>
+    <div class="coracao" id="coracao10">❤️</div>
+    <div class="coracao" id="coracao11">❤️</div>
+    <div class="coracao" id="coracao12">❤️</div>
+    <div class="coracao" id="coracao13">❤️</div>
+    <div class="coracao" id="coracao14">❤️</div>
+    <div class="coracao" id="coracao15">❤️</div>
+
+    <div id="recado">Kauan: para:bolo</div>
+
+    <script>
+        let estado = 0;
+        const botaoNao = document.getElementById('nao');
+
+        function moverNao() {
+            switch (estado) {
+                case 0:
+                    botaoNao.style.top = '200px';
+                    botaoNao.style.left = '20px';
+                    break;
+                case 1:
+                    botaoNao.style.top = '200px';
+                    botaoNao.style.left = '150px';
+                    break;
+                case 2:
+                    botaoNao.style.top = '100px';
+                    botaoNao.style.left = '150px';
+                    break;
+                case 3:
+                    botaoNao.style.top = '100px';
+                    botaoNao.style.left = '20px';
+                    break;
+            }
+            estado = (estado + 1) % 4;
+        }
+    </script>
+</body>
+</html>
